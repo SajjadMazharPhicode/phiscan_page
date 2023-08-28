@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import MapView from '../components/MapView'
 import Card from '../components/Card'
+import MapBox from '../components/MapBox/MapBox'
 
 const initWarehouseData = [
     {
@@ -11,7 +12,7 @@ const initWarehouseData = [
         basicInfo: {
             currentStatus: "active",
             lastUpdated: "2:30 PM (25/08/2023)",
-            vacantCapacity: 254
+            vacantCapacity: 500
         },
         materialInfo: {
             materials: ["Sulphur", "Zinc", "Coal"],
@@ -25,7 +26,7 @@ const initWarehouseData = [
         basicInfo: {
             currentStatus: "running",
             lastUpdated: "3:30 PM (23/08/2023)",
-            vacantCapacity: 251
+            vacantCapacity: 100
         },
         materialInfo: {
             materials: ["Sulphur", "Zinc", "Coal"],
@@ -39,7 +40,21 @@ const initWarehouseData = [
         basicInfo: {
             currentStatus: "running",
             lastUpdated: "3:31 PM (13/08/2023)",
-            vacantCapacity: 251
+            vacantCapacity: 250
+        },
+        materialInfo: {
+            materials: ["Sulphur", "Zinc"],
+            volumes: [232, 41]
+        }
+    },
+    {
+        warehouse: "warehouse-3",
+        address:"Address",
+        location:{lat:28.7041, lng:77.1025},
+        basicInfo: {
+            currentStatus: "running",
+            lastUpdated: "3:31 PM (13/08/2023)",
+            vacantCapacity: 0
         },
         materialInfo: {
             materials: ["Sulphur", "Zinc"],
@@ -55,6 +70,7 @@ const Home = () => {
         <>
             <Navbar />
             <MapView wareHouseDetails={wareHouseDetails} />
+            {/* <MapBox /> */}
             <Card wareHouseDetails={wareHouseDetails} />
         </>
     )

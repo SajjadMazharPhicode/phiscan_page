@@ -2,19 +2,14 @@
     display: none;
 }
 
-.acordion_container{
-height: 2rem;
-width: 4rem;
-background-color: red;
+.card_container{
+    box-shadow: 0px 0px 10px 1px white;
+}
 
-}
-.card_acordion{
-    /* height: 35px;
-    width: 35px;
-    z-index: 100;
-    background-color: black;
-    border: 1px solid black;
-    position: absolute;  */
-    /* margin: 0;
-    /* left: 50%; */
-}
+.animate {
+    background-color: red;
+  }
+
+  @keyframes sliderAnimation {
+
+  }
