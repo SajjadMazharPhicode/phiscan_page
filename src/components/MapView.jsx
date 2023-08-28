@@ -13,12 +13,6 @@ const mapStyles = {
 
 const MapView = (props) => {
 
-  const [activeMarkers, setActiveMarkers] = useState([
-    {lat:22.5726, lng:88.3639},
-    {lat:12.9716, lng:77.5946},
-    {lat:17.6868, lng:83.2185}
-  ])
-
   return (
     <>
       <Map
