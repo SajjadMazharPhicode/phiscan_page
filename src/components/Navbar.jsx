@@ -1,10 +1,9 @@
 import React from 'react'
+import './navbar.css'
 
 const Navbar = () => {
   return (
-
-
-    <nav className="bg-white border-grey-200 dark:bg-white-900 shadow-lg shadow-cyan-500/50 z-999 w-full">
+    <nav className="bg-white border-grey-200 dark:bg-white-900  w-full navbar_container">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#" className="flex items-center">
           {/* <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="Flowbite Logo" /> */}

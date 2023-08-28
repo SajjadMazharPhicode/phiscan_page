@@ -25,6 +25,7 @@ const MapView = (props) => {
           google={props.google}
           zoom={5}
           style={mapStyles}
+          streetViewControl={false}
           initialCenter={
             {
               lat: 20.5937,

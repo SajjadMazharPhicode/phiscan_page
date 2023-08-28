@@ -1,3 +1,20 @@
 .scrolling::-webkit-scrollbar{
     display: none;
 }
+
+.acordion_container{
+height: 2rem;
+width: 4rem;
+background-color: red;
+
+}
+.card_acordion{
+    /* height: 35px;
+    width: 35px;
+    z-index: 100;
+    background-color: black;
+    border: 1px solid black;
+    position: absolute;  */
+    /* margin: 0;
+    /* left: 50%; */
+}
