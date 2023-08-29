@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 // import { Map } from '@googlemaps/react-wrapper'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import iconn from '../marker.png'
+import wg from '../markers/wg.png'
+import wr from '../markers/wr.png'
+import wo from '../markers/wo.png'
 import Card from './Card';
 // import MarkerPoint from './MarkerPoint';
 
@@ -28,7 +31,10 @@ const MapView = (props) => {
         >
           
           {
-            props.wareHouseDetails?.map(marker=> <Marker key={marker.location.lat.toString()+marker.location.lng} position={{lat:marker.location.lat, lng:marker.location.lng}} icon={{url:iconn, scaledSize:new props.google.maps.Size(45,45)}} style={{width:"16px"}} />)
+            props.wareHouseDetails?.map(marker=> <Marker key={marker.location.lat.toString()+marker.location.lng} position={{lat:marker.location.lat, lng:marker.location.lng}} icon={{
+              url:marker.basicInfo.vacantCapacity <= 100 ? wr :
+              marker.basicInfo.vacantCapacity >= 200 && marker.basicInfo.vacantCapacity < 300 ? wo : wg
+              , scaledSize:new props.google.maps.Size(45,45)}} style={{width:"16px"}} />)
           }
         </Map>
     </>

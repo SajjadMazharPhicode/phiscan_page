@@ -11,7 +11,7 @@ const initWarehouseData = [
         basicInfo: {
             currentStatus: "active",
             lastUpdated: "2:30 PM (25/08/2023)",
-            vacantCapacity: 254
+            vacantCapacity: 500
         },
         materialInfo: {
             materials: ["Sulphur", "Zinc", "Coal"],
@@ -25,7 +25,7 @@ const initWarehouseData = [
         basicInfo: {
             currentStatus: "running",
             lastUpdated: "3:30 PM (23/08/2023)",
-            vacantCapacity: 251
+            vacantCapacity: 200
         },
         materialInfo: {
             materials: ["Sulphur", "Zinc", "Coal"],
@@ -39,7 +39,48 @@ const initWarehouseData = [
         basicInfo: {
             currentStatus: "running",
             lastUpdated: "3:31 PM (13/08/2023)",
-            vacantCapacity: 251
+            vacantCapacity: 100
+        },
+        materialInfo: {
+            materials: ["Sulphur", "Zinc"],
+            volumes: [232, 41]
+        }
+    },{
+        warehouse: "warehouse-3",
+        address:"Address",
+        location:{lat:17.6868, lng:83.2185},
+        basicInfo: {
+            currentStatus: "running",
+            lastUpdated: "3:31 PM (13/08/2023)",
+            vacantCapacity: 100
+        },
+        materialInfo: {
+            materials: ["Sulphur", "Zinc"],
+            volumes: [232, 41]
+        }
+    },
+    {
+        warehouse: "warehouse-3",
+        address:"Address",
+        location:{lat:17.6868, lng:83.2185},
+        basicInfo: {
+            currentStatus: "running",
+            lastUpdated: "3:31 PM (13/08/2023)",
+            vacantCapacity: 100
+        },
+        materialInfo: {
+            materials: ["Sulphur", "Zinc"],
+            volumes: [232, 41]
+        }
+    },
+    {
+        warehouse: "warehouse-3",
+        address:"Address",
+        location:{lat:17.6868, lng:83.2185},
+        basicInfo: {
+            currentStatus: "running",
+            lastUpdated: "3:31 PM (13/08/2023)",
+            vacantCapacity: 100
         },
         materialInfo: {
             materials: ["Sulphur", "Zinc"],
