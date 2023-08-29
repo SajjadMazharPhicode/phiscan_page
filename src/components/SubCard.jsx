@@ -6,7 +6,9 @@ console.log(capacity)
     return (
         <div className="block cursor-pointer text-xs max-w-sm p-6 bg-white border flex-col border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md sbucard_container">
             <div className="flex">
-                <img src="/assets/warehouse.png" alt="warehouse" className='h-10' />
+                <div style={{borderRadius:"50px", backgroundColor:"#DFF0FE"}} className='h-12 w-12 flex items-center justify-center mb-2'>
+                    <img src="/assets/warehouse2.png"  alt="warehouse" className='h-7 w-7' />
+                </div>
                 <div className='pl-3'>
                     <h5 className=" text-l font-medium text-gray-900 light:text-white">{detail.warehouse}</h5>
                     <span className="text-sm text-gray-500 dark:text-gray-400">{detail.address}</span>
@@ -36,7 +38,7 @@ console.log(capacity)
                     <div>
 
                         <img 
-                        style={{ height: '50px' }} 
+                        style={{ height: '50px', transform:"rotate(90deg)" }} 
                         src={`assets/${capacity === 0 ? 'empty.png' : capacity > 0 && capacity <= 200 ? 'low.png' : capacity > 200 && capacity < 500 ? 'half.png' : 'full.png' }`} />
                     </div>
                 </div>

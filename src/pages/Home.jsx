@@ -70,7 +70,7 @@ const Home = () => {
         <>
             <Navbar />
             {/* <MapView wareHouseDetails={wareHouseDetails} /> */}
-            <MapBox />
+            <MapBox wareHouseDetails={wareHouseDetails} />
             <Card wareHouseDetails={wareHouseDetails} />
         </>
     )

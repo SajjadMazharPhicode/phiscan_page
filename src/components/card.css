@@ -3,13 +3,7 @@
 }
 
 .card_container{
-    box-shadow: 0px 0px 10px 1px white;
+    /* transform: translateX(-17rem); */
+    width: 10px;
+    transition: width 500ms ease-in;
 }
-
-.animate {
-    background-color: red;
-  }
-
-  @keyframes sliderAnimation {
-
-  }

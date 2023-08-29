@@ -4,3 +4,7 @@
     z-index: 99999;
 }
 
+input:focus {
+    outline: none;
+}
+
