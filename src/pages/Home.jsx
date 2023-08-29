@@ -65,13 +65,21 @@ const initWarehouseData = [
 
 const Home = () => {
     const [wareHouseDetails, setWarehouseDetails] = useState(initWarehouseData)
+    const [isCollapsed, setIsCollapsed] = useState(true)
+    const [animate, setAnimate] = useState(true);
 
+    const hideCard = () => {
+        // setAnimate(true);
+        // setIsCollapsed(!isCollapsed)
+        document.querySelector(".card_container").classList.toggle('closed')
+        setIsCollapsed(!isCollapsed)
+    }
     return (
         <>
-            <Navbar />
+            <Navbar isCollapsed={isCollapsed} hideCard={hideCard} />
             {/* <MapView wareHouseDetails={wareHouseDetails} /> */}
             <MapBox wareHouseDetails={wareHouseDetails} />
-            <Card wareHouseDetails={wareHouseDetails} />
+            <Card wareHouseDetails={wareHouseDetails} isCollapsed={isCollapsed} />
         </>
     )
 }

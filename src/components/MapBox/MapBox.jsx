@@ -19,7 +19,7 @@ const MapBox = ({wareHouseDetails}) => {
             wareHouseDetails?.map(detail=> (
                 <Marker
                     longitude={detail.location.lng} latitude={detail.location.lat}>
-                    <img width="25px" style={{filter:"invert()"}} src="assets/warehouse2.png" />
+                    <img width="40px" src="assets/waremark.png" />
                 </Marker>
 
             ))
