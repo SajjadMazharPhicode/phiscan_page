@@ -1,3 +1,15 @@
 .scrolling::-webkit-scrollbar{
     display: none;
 }
+
+.card_container{
+    box-shadow: 0px 0px 10px 1px white;
+}
+
+.animate {
+    background-color: red;
+  }
+
+  @keyframes sliderAnimation {
+
+  }
