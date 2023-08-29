@@ -4,12 +4,6 @@ import './card.css'
 
 const Card = ({ wareHouseDetails }) => {
 
-    const [isCollapsed, setIsCollapsed] = useState(false)
-
-    const hideCard = () => {
-        setIsCollapsed(!isCollapsed)
-    }
-
     return (
         <div
             style={{
@@ -17,13 +11,14 @@ const Card = ({ wareHouseDetails }) => {
                 position: "absolute",
                 top: "150px",
                 left: "-20px",
-                width: isCollapsed ? "10px" : "19rem",
+                // width: isCollapsed ? "10px" : "19rem",
                 height: "60vh",
                 // opacity: '1'
             }}
-            className={`${isCollapsed ? 'card_container' : ''} rounded-3xl slide`}
+            id='caard'
+            className={`card_container rounded-3xl`}
         >
-            <div
+            {/* <div
                 className='accordion_container'
                 style={{
                     position: "absolute",
@@ -44,14 +39,13 @@ const Card = ({ wareHouseDetails }) => {
                 onClick={() => hideCard()}
             >
                 {!isCollapsed ? <img width='30px' style={{ marginLeft: '5px', filter: 'invert()' }} src='assets/left-arrow.png' /> : <img width='30px' style={{ marginLeft: '5px', filter: 'invert()' }} src='assets/right-arrow.png' />}
-            </div>
-
+            </div> */}
             <div href="#" style={{
                 backgroundColor: "#4285f4",
                 width: "19rem",
                 height: "60vh",
-                display: isCollapsed ? 'none' : 'block'
-            }} className=" block max-w-sm p-6 bg-white border-gray-200 rounded-3xl shadow hover:bg-gray-100 overflow-scroll scrolling">
+                // display: isCollapsed ? 'none' : 'block'
+            }} className="block max-w-sm p-6 bg-white border-gray-200 rounded-3xl shadow hover:bg-gray-100 overflow-scroll scrolling">
 
                 <div href="#" className="block text-gray-900 rounded md:border-0 dark:text-white text-xl pl-2 cursor-default">About</div>
 

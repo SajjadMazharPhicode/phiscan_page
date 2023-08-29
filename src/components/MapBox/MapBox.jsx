@@ -2,11 +2,29 @@ import * as React from 'react';
 import Map, { Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const MapBox = ({ wareHouseDetails }) => {
+const MapBox = ({ wareHouseDetails, setWarehouseDetails }) => {
     const [closePopUp, setClosePopUp] = React.useState(false)
 
-    const showPopup = () => {
-        setClosePopUp(!closePopUp)
+    const togglePopUp = (id, action) => {
+        let hoverUpdate
+        if(action === 'in') {
+            hoverUpdate = wareHouseDetails.map((item) => {
+                if(id === item.id) {
+                    item.hover = true
+                    return item
+                }
+                    return item
+            })
+        }else{
+            hoverUpdate = wareHouseDetails.map((item) => {
+                if(id === item.id) {
+                    item.hover = false
+                    return item
+                }
+                    return item
+            })
+        }
+        setWarehouseDetails(hoverUpdate)
     }
 
 
@@ -25,26 +43,34 @@ const MapBox = ({ wareHouseDetails }) => {
         mapStyle="mapbox://styles/sajjadmazhar/cllupbcl100d501pb7zlqemx2"
     >
         {
-            wareHouseDetails?.map((detail, i) => (
-                <div onClick={() => showPopup()}>
-                    <Marker
-                        longitude={detail.location.lng} latitude={detail.location.lat}>
-                        <img width="25px" style={{ filter: "invert()" }} src="assets/warehouse2.png" />
-                        
-                    </Marker>
-
-                    {closePopUp ? < Popup
-                        latitude={detail.location.lat}
-                    longitude={detail.location.lng}
-                    closeButton={true}
-                    closeOnClick={false}
-                    // onClose={() => this.setState({ showPopup: false })}
-                        anchor="top" >
-                    <div>You are here</div>
-                </Popup> : ''}
-    </div>
+            wareHouseDetails?.map(detail => (
+                <Marker
+                    longitude={detail.location.lng} latitude={detail.location.lat}>
+                    <img
+                        onMouseEnter={() => { togglePopUp(detail.id, 'in') }}
+                        onMouseLeave={() => { togglePopUp(detail.id, 'out') }}
+                        width="40px" src="assets/waremark.png" />
+                </Marker>
             ))
         }
+
+        {
+            wareHouseDetails?.map((detail) => (
+                <Popup
+                style={{display: detail.hover ? '' : 'none'}}
+                    longitude={detail.location.lng}
+                    latitude={detail.location.lat}
+
+                    >
+                    <div>
+                        <p>{detail.warehouse}</p>
+                        <p>{detail.address}</p>
+                    </div>
+                </Popup>
+            ))
+        }
+
+
     </Map >
 }
 

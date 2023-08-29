@@ -2,9 +2,16 @@
     box-shadow: 0px 1px 3px gray;
     position: absolute;
     z-index: 99999;
+    
+}
+#caard.closed {
+    margin-left: -200px;
 }
 
 input:focus {
     outline: none;
+}
+.selected {
+    
 }
 
