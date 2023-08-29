@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Map, { Marker } from 'react-map-gl';
+import Map, { Marker, Popup } from 'react-map-gl';
 
 
 const MapBox = ({wareHouseDetails}) => {
@@ -24,6 +24,7 @@ const MapBox = ({wareHouseDetails}) => {
 
             ))
         }
+        
     </Map>
 }
 
