@@ -69,8 +69,8 @@ const Home = () => {
     return (
         <>
             <Navbar />
-            <MapView wareHouseDetails={wareHouseDetails} />
-            {/* <MapBox /> */}
+            {/* <MapView wareHouseDetails={wareHouseDetails} /> */}
+            <MapBox wareHouseDetails={wareHouseDetails} />
             <Card wareHouseDetails={wareHouseDetails} />
         </>
     )

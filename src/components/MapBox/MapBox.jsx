@@ -2,8 +2,9 @@ import * as React from 'react';
 import Map, { Marker } from 'react-map-gl';
 
 
-const MapBox = () => {
+const MapBox = ({wareHouseDetails}) => {
     return <Map
+        mapLib={import('mapbox-gl')}
         mapboxAccessToken="pk.eyJ1Ijoic2FqamFkbWF6aGFyIiwiYSI6ImNsbHVwM293dzFlcWsza3BpZ3owMW8wM2oifQ.mCHHWUpVQvDGmvfkmgXxhw"
         initialViewState={{
             longitude: 78.9629,
@@ -14,10 +15,15 @@ const MapBox = () => {
         style={{ height: '100vh', width: '100vw' }}
         mapStyle="mapbox://styles/sajjadmazhar/cllupbcl100d501pb7zlqemx2"
     >
-        <Marker
-            longitude={22.5726} latitude={88.3639} anchor="bottom" >
-            <img src="assets/w-green.png" />
-        </Marker>
+        {
+            wareHouseDetails?.map(detail=> (
+                <Marker
+                    longitude={detail.location.lng} latitude={detail.location.lat}>
+                    <img width="25px" style={{filter:"invert()"}} src="assets/warehouse2.png" />
+                </Marker>
+
+            ))
+        }
     </Map>
 }
 

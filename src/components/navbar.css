@@ -4,3 +4,7 @@
     z-index: 99999;
 }
 
+/* input[type=text]:focus {
+    border: 1px solid #6981C2 !important;
+} */
+
