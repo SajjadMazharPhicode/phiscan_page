@@ -41,7 +41,7 @@ const Card = ({ wareHouseDetails }) => {
                 {!isCollapsed ? <img width='30px' style={{ marginLeft: '5px', filter: 'invert()' }} src='assets/left-arrow.png' /> : <img width='30px' style={{ marginLeft: '5px', filter: 'invert()' }} src='assets/right-arrow.png' />}
             </div> */}
             <div href="#" style={{
-                backgroundColor: "#4285f4",
+                backgroundColor: "rgb(79 113 197)",
                 width: "19rem",
                 height: "60vh",
                 // display: isCollapsed ? 'none' : 'block'
