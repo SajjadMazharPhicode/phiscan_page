@@ -20,7 +20,7 @@ const hideCard = () => {
                 top: "150px",
                 left: "-20px",
                 width: isCollapsed ? "10px" : "20rem",
-                height: "40rem",
+                height: "60vh",
                 // opacity: '1'
             }}
             className={`card_container rounded-3xl slide ${animate ? 'animate' : ''}`}
@@ -48,7 +48,7 @@ const hideCard = () => {
             <div href="#" style={{
                 backgroundColor: "#4285f4",
                 width: "20rem",
-                height: "40rem",
+                height: "60vh",
                 display:  isCollapsed ? 'none' : 'block'
             }} className="block max-w-sm p-6 bg-white border-gray-200 rounded-3xl shadow hover:bg-gray-100 overflow-scroll scrolling">
 
