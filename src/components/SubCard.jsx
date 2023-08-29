@@ -7,7 +7,8 @@ const SubCard = ({ detail }) => {
 
     const getVolumeInPercent = () => {
         const percent = (detail.basicInfo.vacantCapacity / detail.totalCapacity * 100).toFixed(2)
-        const classs = percent <= 1 ? 'empty' : percent > 1 && percent <= 25 ? 'low' : percent > 25 && percent <= 50 ? 'half' : percent > 50 && percent <= 75 ? "gt_50" : percent > 75 && percent <= 99 ? "gt_75" : 'full'
+        const diff = 100 - percent
+        const classs = diff <= 1 ? 'empty' : diff > 1 && diff <= 25 ? 'low' : diff > 25 && diff <= 50 ? 'half' : diff > 50 && diff <= 75 ? "gt_50" : diff > 75 && diff <= 99 ? "gt_75" : 'full'
         return [classs, percent]
     }
 

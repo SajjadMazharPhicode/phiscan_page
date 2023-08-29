@@ -49,7 +49,7 @@ const initWarehouseData = [
         basicInfo: {
             currentStatus: "running",
             lastUpdated: "3:31 PM (13/08/2023)",
-            vacantCapacity: 250
+            vacantCapacity: 800
         },
         materialInfo: {
             materials: ["Sulphur", "Zinc"],
