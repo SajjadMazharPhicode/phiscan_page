@@ -8,10 +8,10 @@
     margin-left: -200px;
 }
 
+input:focus {
+    outline: none;
+}
 .selected {
     
 }
-/* input[type=text]:focus {
-    border: 1px solid #6981C2 !important;
-} */
 

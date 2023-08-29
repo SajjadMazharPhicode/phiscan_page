@@ -6,22 +6,19 @@ const Navbar = ({ hideCard, isCollapsed }) => {
   const li1Ref = useRef(null)
   const li2Ref = useRef(null)
   const li3Ref = useRef(null)
-  const [navButtons, setNavButtons] = useState([
-    li1Ref, li2Ref, li3Ref
-  ])
 
-  const selectFromNavbar = (i)=>{
+  const navButtons = [ li1Ref, li2Ref, li3Ref ]
+
+  const selectFromNavbar = (i) => {
     // e.target.style.backgroundColor = "#6680c142"
     // console.log(e.target)
-    const updatedSelection = navButtons.map((elm, index) => {
-      if(i===index){
+     navButtons.forEach((elm, index) => {
+      if (i === index) {
         elm.current.style.backgroundColor = "#6680c142"
-      }else{
+      } else {
         elm.current.style.backgroundColor = ""
       }
-      return elm
-    } ) 
-    setNavButtons(updatedSelection)
+    })
   }
 
   return (
@@ -39,14 +36,14 @@ const Navbar = ({ hideCard, isCollapsed }) => {
             <span className="self-center text-2xl font-semibold whitespace-nowrap light:text-white">PhiScan</span>
           </div>
           <ul className="flex gap-10">
-            <li ref={li1Ref} style={{ backgroundColor: "#6680c142", borderRadius: "5px", width: "43px", height: "43px" }} className='h-screen flex items-center justify-center' onClick={()=>selectFromNavbar(0)}>
+            <li ref={li1Ref} style={{ backgroundColor: "#6680c142", borderRadius: "5px", width: "43px", height: "43px" }} className='h-screen flex items-center justify-center' onClick={() => selectFromNavbar(0)}>
               <a href="" className="block py-2 pl-3 pr-4  rounded md:bg-transparent md:p-0 " aria-current="page">
-                <img width='30px' style={{pointerEvents:"none"}} src='assets/map2.png' /></a>
+                <img width='30px' style={{ pointerEvents: "none" }} src='assets/map2.png' /></a>
             </li>
-            <li ref={li2Ref} onClick={()=>selectFromNavbar(1)} style={{ backgroundColor: "", borderRadius: "5px", width: "43px", height: "43px" }} className='h-screen flex items-center justify-center'>
-              <img width='30px' src='assets/schedule2.png' style={{pointerEvents:"none"}}  />
+            <li ref={li2Ref} onClick={() => selectFromNavbar(1)} style={{ backgroundColor: "", borderRadius: "5px", width: "43px", height: "43px" }} className='h-screen flex items-center justify-center'>
+              <img width='30px' src='assets/schedule2.png' style={{ pointerEvents: "none" }} />
             </li>
-            <li ref={li3Ref} onClick={()=>selectFromNavbar(2)} style={{ backgroundColor: "", borderRadius: "5px", width: "43px", height: "43px" }} className='h-screen flex items-center justify-center'><img width='30px' src='assets/calculator2.png' style={{pointerEvents:"none"}}  />
+            <li ref={li3Ref} onClick={() => selectFromNavbar(2)} style={{ backgroundColor: "", borderRadius: "5px", width: "43px", height: "43px" }} className='h-screen flex items-center justify-center'><img width='30px' src='assets/calculator2.png' style={{ pointerEvents: "none" }} />
             </li>
             {/* {navButtons.map(elm=> elm)} */}
           </ul>

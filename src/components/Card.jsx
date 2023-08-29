@@ -16,7 +16,7 @@ const Card = ({ wareHouseDetails }) => {
                 // opacity: '1'
             }}
             id='caard'
-            className={`card_container rounded-3xl closed`}
+            className={`card_container rounded-3xl`}
         >
             {/* <div
                 className='accordion_container'
