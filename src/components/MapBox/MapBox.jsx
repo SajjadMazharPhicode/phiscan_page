@@ -7,21 +7,21 @@ const MapBox = ({ wareHouseDetails, setWarehouseDetails }) => {
 
     const togglePopUp = (id, action) => {
         let hoverUpdate
-        if(action === 'in') {
+        if (action === 'in') {
             hoverUpdate = wareHouseDetails.map((item) => {
-                if(id === item.id) {
+                if (id === item.id) {
                     item.hover = true
                     return item
                 }
-                    return item
+                return item
             })
-        }else{
+        } else {
             hoverUpdate = wareHouseDetails.map((item) => {
-                if(id === item.id) {
+                if (id === item.id) {
                     item.hover = false
                     return item
                 }
-                    return item
+                return item
             })
         }
         setWarehouseDetails(hoverUpdate)
@@ -30,27 +30,27 @@ const MapBox = ({ wareHouseDetails, setWarehouseDetails }) => {
 
     return <Map
         mapLib={import('mapbox-gl')}
-        // mapboxAccessToken="pk.eyJ1Ijoic2FqamFkbWF6aGFyIiwiYSI6ImNsbHVwM293dzFlcWsza3BpZ3owMW8wM2oifQ.mCHHWUpVQvDGmvfkmgXxhw"
         mapboxAccessToken="pk.eyJ1Ijoic2FqamFkbWF6aGFyIiwiYSI6ImNsbHVwM293dzFlcWsza3BpZ3owMW8wM2oifQ.mCHHWUpVQvDGmvfkmgXxhw"
         initialViewState={{
             longitude: 78.9629,
             latitude: 20.5937,
-            zoom: 5,
+            zoom: 4.5,
             height: '100vh'
         }}
         style={{ height: '100vh', width: '100vw' }}
-        // mapStyle="mapbox://styles/mahatab/cllvydbuz00e501pj5mzo25sc"
         mapStyle="mapbox://styles/sajjadmazhar/cllupbcl100d501pb7zlqemx2"
     >
         {
             wareHouseDetails?.map(detail => (
                 <Marker
-                    onClick={(e)=> e.preventDefault()}
-                    longitude={detail.location.lng} latitude={detail.location.lat}>
+                    longitude={detail.location.lng}
+                    latitude={detail.location.lat}
+                >
                     <img
                         onMouseEnter={() => { togglePopUp(detail.id, 'in') }}
                         onMouseLeave={() => { togglePopUp(detail.id, 'out') }}
-                        width="40px" src="assets/waremark.png" />
+                        width="60px" src="assets/waremark.png"
+                    />
                 </Marker>
             ))
         }
@@ -58,11 +58,11 @@ const MapBox = ({ wareHouseDetails, setWarehouseDetails }) => {
         {
             wareHouseDetails?.map((detail) => (
                 <Popup
-                style={{display: detail.hover ? '' : 'none'}}
+                    style={{ display: detail.hover ? '' : 'none' }}
                     longitude={detail.location.lng}
                     latitude={detail.location.lat}
 
-                    >
+                >
                     <div>
                         <p>{detail.warehouse}</p>
                         <p>{detail.address}</p>

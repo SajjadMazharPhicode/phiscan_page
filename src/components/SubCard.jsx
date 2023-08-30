@@ -1,8 +1,10 @@
 import React from 'react'
 import './subCard.css'
+
+
 const SubCard = ({ detail }) => {
     const capacity = detail.basicInfo.vacantCapacity
-console.log(capacity)
+
     return (
         <div className="block cursor-pointer text-xs max-w-sm p-6 bg-white border flex-col border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md sbucard_container">
             <div className="flex">
@@ -35,11 +37,12 @@ console.log(capacity)
                             }
                         </div>
                     </div>
-                    <div>
 
-                        <img 
-                        style={{ height: '50px', transform:"rotate(90deg)" }} 
-                        src={`assets/${capacity === 0 ? 'empty.png' : capacity > 0 && capacity <= 200 ? 'low.png' : capacity > 200 && capacity < 500 ? 'half.png' : 'full.png' }`} />
+                    <div className='capacity_contaier'>
+                        {/* <img 
+                        style={{ height: '50px', transform:"rotate(90deg)", border: '1px solid black' }} 
+                        src={`assets/${capacity === 0 ? 'empty.png' : capacity > 0 && capacity <= 200 ? 'low.png' : capacity > 200 && capacity < 500 ? 'half.png' : 'full.png' }`} /> */}
+                    <div className={`capacity_${capacity === 0 ? 'empty' : capacity > 0 && capacity <= 200 ? 'low' : capacity > 200 && capacity < 500 ? 'half' : 'full' }`}></div>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@ const initWarehouseData = [
         id: 0,
         hover: false,
         warehouse: "warehouse-1",
-        address:"Address",
+        address:"Kolkata",
         location:{lat:22.5726, lng:88.3639},
         basicInfo: {
             currentStatus: "active",
@@ -25,7 +25,7 @@ const initWarehouseData = [
         id: 1,
         hover: false,
         warehouse: "warehouse-2",
-        address:"Address",
+        address:"Bengaluru",
         location:{lat:12.9716, lng:77.5946},
         basicInfo: {
             currentStatus: "running",
@@ -41,7 +41,7 @@ const initWarehouseData = [
         id: 2,
         hover: false,
         warehouse: "warehouse-3",
-        address:"Address",
+        address:"Visakhapatnam",
         location:{lat:17.6868, lng:83.2185},
         basicInfo: {
             currentStatus: "running",
@@ -56,8 +56,8 @@ const initWarehouseData = [
     {
         id: 3,
         hover: false,
-        warehouse: "warehouse-3",
-        address:"Address",
+        warehouse: "warehouse-4",
+        address:"Delhi",
         location:{lat:28.7041, lng:77.1025},
         basicInfo: {
             currentStatus: "running",

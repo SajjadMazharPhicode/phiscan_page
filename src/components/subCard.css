@@ -4,3 +4,40 @@
         0px 25px 20px -20px rgba(0, 0, 0, 0.45),
         -25px 0px 20px -20px rgba(0, 0, 0, 0.45);
 }
+
+.capacity_contaier {
+    height: 3.5rem;
+    width: 2.5rem;
+    border: 1px solid black;
+    transform: rotate(180deg);
+    padding: 1px;
+    border-radius: 5px;
+}
+
+.capacity_half {
+    background-color: orange;
+    height: 50%;
+    width: 100%;
+    border-radius: 5px;
+
+}
+
+.capacity_low {
+    background-color: red;
+    height: 25%;
+    width: 100%;
+    border-radius: 5px;
+
+}
+
+.capacity_empty {
+    background-color: gray;
+}
+
+.capacity_full {
+    background-color: rgb(28, 194, 28);
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+
+}
