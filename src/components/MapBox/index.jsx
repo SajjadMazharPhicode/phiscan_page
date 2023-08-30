@@ -30,7 +30,7 @@ const MapBox = ({ wareHouseDetails, setWarehouseDetails }) => {
 
     return <Map
         mapLib={import('mapbox-gl')}
-        mapboxAccessToken="pk.eyJ1Ijoic2FqamFkbWF6aGFyIiwiYSI6ImNsbHVwM293dzFlcWsza3BpZ3owMW8wM2oifQ.mCHHWUpVQvDGmvfkmgXxhw"
+        mapboxAccessToken={process.env.REACT_APP_MAP_BOX_ACCESS_TOKEN}
         initialViewState={{
             longitude: 78.9629,
             latitude: 20.5937,

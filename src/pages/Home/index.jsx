@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../components/Navbar'
-import MapView from '../components/MapView'
-import Card from '../components/Card'
-import MapBox from '../components/MapBox/MapBox'
+import Navbar from '../../components/Navbar'
+import Card from '../../components/Card'
+import MapBox from '../../components/MapBox'
 
 const initWarehouseData = [
     {
