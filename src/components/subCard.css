@@ -6,12 +6,13 @@
 }
 
 .capacity_contaier {
-    height: 3.5rem;
-    width: 2.5rem;
+    height: 1.5rem;
+    width: 1rem;
     border: 1px solid black;
     transform: rotate(180deg);
     padding: 1px;
     border-radius: 5px;
+    /* border: 1px solid black; */
 }
 
 .capacity_half {
@@ -23,8 +24,23 @@
 }
 
 .capacity_low {
-    background-color: red;
+    background-color: rgb(28, 194, 28);
     height: 25%;
+    width: 100%;
+    border-radius: 5px;
+
+}
+
+.capacity_gt_50 {
+    background-color: orange;
+    height: 75%;
+    width: 100%;
+    border-radius: 5px;
+
+}
+.capacity_gt_75 {
+    background-color: rgb(245, 44, 44);
+    height: 90%;
     width: 100%;
     border-radius: 5px;
 
@@ -35,7 +51,7 @@
 }
 
 .capacity_full {
-    background-color: rgb(28, 194, 28);
+    background-color: red;
     height: 100%;
     width: 100%;
     border-radius: 5px;

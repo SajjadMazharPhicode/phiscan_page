@@ -11,7 +11,15 @@
 input:focus {
     outline: none;
 }
-.selected {
-    
+
+.nav_btn{
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    color: #00d7c3;
 }
 
+.nav_btn:hover {
+    /* box-shadow: 0 0 10px 0 #cddae8 inset, 0 0 20px 2px #cddae8; */
+    background-color: #ebebed;
+    border: 1px solid #cddae8;
+}
