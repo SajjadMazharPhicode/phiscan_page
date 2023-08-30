@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/phiscan_page/static/css/main.c117d472.css",
+    "main.js": "/phiscan_page/static/js/main.24776022.js",
+    "static/js/483.5530bc29.chunk.js": "/phiscan_page/static/js/483.5530bc29.chunk.js",
+    "static/media/warehouse.png": "/phiscan_page/static/media/warehouse.819a04abe01f997f4d8e.png",
+    "index.html": "/phiscan_page/index.html",
+    "main.c117d472.css.map": "/phiscan_page/static/css/main.c117d472.css.map",
+    "main.24776022.js.map": "/phiscan_page/static/js/main.24776022.js.map",
+    "483.5530bc29.chunk.js.map": "/phiscan_page/static/js/483.5530bc29.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c117d472.css",
+    "static/js/main.24776022.js"
+  ]
+}
