@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import SubCard from './SubCard'
 import './card.css'
+import dataContext from '../../context/DataContext'
 
-const Card = ({ wareHouseDetails }) => {
-
+const Card = ({pageId='home'}) => {
+    const {wareHouseDetails, isCollapsed} = useContext(dataContext)
     return (
         <div
             style={{
@@ -50,7 +51,7 @@ const Card = ({ wareHouseDetails }) => {
                 <div href="#" className="block text-center text-gray-900 rounded md:border-0 dark:text-white text-xl pl-2 cursor-default">Overview</div>
 
                 {
-                    wareHouseDetails?.map(detail => <SubCard detail={detail} />)
+                    wareHouseDetails?.map((detail, i) => <SubCard key={i+pageId} detail={detail} />)
                 }
             </div>
         </div>

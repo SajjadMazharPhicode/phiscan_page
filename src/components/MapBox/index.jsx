@@ -3,7 +3,6 @@ import Map, { Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const MapBox = ({ wareHouseDetails, setWarehouseDetails }) => {
-    const [closePopUp, setClosePopUp] = React.useState(false)
 
     const togglePopUp = (id, action) => {
         let hoverUpdate

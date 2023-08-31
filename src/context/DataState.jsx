@@ -1,8 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Navbar from '../../components/Navbar'
-import Card from '../../components/Card'
-import MapBox from '../../components/MapBox'
-import dataContext from '../../context/DataContext'
+import React, { useState } from 'react'
+import dataContext from './DataContext'
 
 const initWarehouseData = [
     {
@@ -10,8 +7,8 @@ const initWarehouseData = [
         hover: false,
         totalCapacity: 1000,
         warehouse: "warehouse-1",
-        address:"Kolkata",
-        location:{lat:22.5726, lng:88.3639},
+        address: "Kolkata",
+        location: { lat: 22.5726, lng: 88.3639 },
         basicInfo: {
             currentStatus: "active",
             lastUpdated: "2:30 PM (25/08/2023)",
@@ -27,8 +24,8 @@ const initWarehouseData = [
         hover: false,
         totalCapacity: 1000,
         warehouse: "warehouse-2",
-        address:"Bengaluru",
-        location:{lat:12.9716, lng:77.5946},
+        address: "Bengaluru",
+        location: { lat: 12.9716, lng: 77.5946 },
         basicInfo: {
             currentStatus: "running",
             lastUpdated: "3:30 PM (23/08/2023)",
@@ -44,8 +41,8 @@ const initWarehouseData = [
         hover: false,
         totalCapacity: 1000,
         warehouse: "warehouse-3",
-        address:"Visakhapatnam",
-        location:{lat:17.6868, lng:83.2185},
+        address: "Visakhapatnam",
+        location: { lat: 17.6868, lng: 83.2185 },
         basicInfo: {
             currentStatus: "running",
             lastUpdated: "3:31 PM (13/08/2023)",
@@ -61,8 +58,8 @@ const initWarehouseData = [
         hover: false,
         totalCapacity: 1000,
         warehouse: "warehouse-4",
-        address:"Delhi",
-        location:{lat:28.7041, lng:77.1025},
+        address: "Delhi",
+        location: { lat: 28.7041, lng: 77.1025 },
         basicInfo: {
             currentStatus: "running",
             lastUpdated: "3:31 PM (13/08/2023)",
@@ -75,31 +72,28 @@ const initWarehouseData = [
     }
 ]
 
+const DataState = ({ children }) => {
+    const [wareHouseDetails, setWarehouseDetails] = useState(initWarehouseData);
+    const [isCollapsed, setIsCollapsed] = useState(false);
 
-const Home = () => {
-    // const [wareHouseDetails, setWarehouseDetails] = useState(initWarehouseData)
-    // const [isCollapsed, setIsCollapsed] = useState(false)
-    const {wareHouseDetails,setWarehouseDetails, isCollapsed, setIsCollapsed} = useContext(dataContext)
-    
+
     const hideCard = () => {
         document.querySelector(".card_container").classList.toggle('closed')
         setIsCollapsed(!isCollapsed)
     }
-    useEffect(()=>{
-        const updateWareVacCap = wareHouseDetails?.map(detail=>{
-            detail.basicInfo.vacantCapacity = detail.totalCapacity - detail.materialInfo.volumes.reduce((acc, curr)=> acc+curr, 0)
-            return detail
-        })
-        setWarehouseDetails(updateWareVacCap)
-    },[])
+    const values = {
+        wareHouseDetails,
+        isCollapsed,
+        setIsCollapsed,
+        setWarehouseDetails,
+        hideCard
+    }
+
     return (
-        <>
-            <Navbar isCollapsed={isCollapsed} hideCard={hideCard} />
-            {/* <MapView wareHouseDetails={wareHouseDetails} /> */}
-            <MapBox wareHouseDetails={wareHouseDetails} setWarehouseDetails={setWarehouseDetails} />
-            <Card wareHouseDetails={wareHouseDetails} isCollapsed={isCollapsed} />
-        </>
+        <dataContext.Provider value={values}>
+            {children}
+        </dataContext.Provider>
     )
 }
 
-export default Home
+export default DataState

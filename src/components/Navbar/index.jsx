@@ -1,11 +1,13 @@
-import React, { useRef, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import './navbar.css'
+import dataContext from '../../context/DataContext'
 
-const Navbar = ({ hideCard, isCollapsed }) => {
-
+const Navbar = () => {
+  const {hideCard,isCollapsed} = useContext(dataContext)
   const li1Ref = useRef(null)
   const li2Ref = useRef(null)
   const li3Ref = useRef(null)
+  // const {isCollapsed, hideCard} = useContext
 
   const navButtons = [ li1Ref, li2Ref, li3Ref ]
 

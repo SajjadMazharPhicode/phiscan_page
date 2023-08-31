@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import './subCard.css'
+import {useNavigate} from 'react-router-dom'
 
 
 const SubCard = ({ detail }) => {
     const capacity = detail.basicInfo.vacantCapacity
-
+    const navigate = useNavigate()
     const getVolumeInPercent = () => {
         const fraction = detail.basicInfo.vacantCapacity / detail.totalCapacity 
         const percent = ((detail.basicInfo.vacantCapacity * 100) % detail.totalCapacity  === 0)? (fraction*100).toFixed() : (fraction * 100).toFixed(2)
@@ -17,9 +18,19 @@ const SubCard = ({ detail }) => {
         return (elmVol/detail.totalCapacity *100).toFixed(2)
         
     }
+    const gotToPage = ()=>{
+        // navigate({
+        //     pathname:"/warehouse-details",
+        //     search:"?id="+detail.id
+        // })
+        navigate("/warehouse-details", {state:{id:detail.id}})
+    }
 
     return (
-        <div className="block cursor-pointer text-xs max-w-sm p-6 bg-white border flex-col border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md sbucard_container">
+        <div 
+            className="block cursor-pointer text-xs max-w-sm p-6 bg-white border flex-col border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md sbucard_container"
+            onClick={()=>gotToPage()}
+        >
             <div className="flex items-center gap-2 justify-between">
                 <div style={{ borderRadius: "50px", backgroundColor: "rgb(23 88 159 / 60%)" }} className='h-12 w-12 flex items-center justify-center mb-2'>
                     <img src="/assets/waremark.png" alt="warehouse" className='h-11 w-11' />
