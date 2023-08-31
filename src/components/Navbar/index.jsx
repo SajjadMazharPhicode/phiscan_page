@@ -32,7 +32,6 @@ const Navbar = () => {
           >
             <img src="/assets/hamburg.png" alt="" width="20px" />
           </div>
-          {/* <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="Flowbite Logo" /> */}
           <div className='flex gap-3 items-center'>
             <img width="25px" src='/assets/phicode.png' />
             <span className="self-center text-2xl font-semibold whitespace-nowrap light:text-white">PhiScan</span>
@@ -47,7 +46,6 @@ const Navbar = () => {
             </li>
             <li ref={li3Ref} onClick={() => selectFromNavbar(2)} style={{ backgroundColor: "", borderRadius: "5px", width: "43px", height: "43px" }} className='h-screen flex items-center justify-center nav_btn'><img width='30px' src='assets/calculator2.png' style={{ pointerEvents: "none" }} />
             </li>
-            {/* {navButtons.map(elm=> elm)} */}
           </ul>
         </a>
 
