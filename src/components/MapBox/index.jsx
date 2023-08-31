@@ -1,8 +1,11 @@
 import * as React from 'react';
 import Map, { Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import dataContext from '../../context/DataContext';
 
 const MapBox = ({ wareHouseDetails, setWarehouseDetails }) => {
+
+    const { gotToPage } = React.useContext(dataContext)
 
     const togglePopUp = (id, action) => {
         let hoverUpdate
@@ -46,6 +49,7 @@ const MapBox = ({ wareHouseDetails, setWarehouseDetails }) => {
                     latitude={detail.location.lat}
                 >
                     <img
+                        onClick={() => {gotToPage(detail)}}
                         onMouseEnter={() => { togglePopUp(detail.id, 'in') }}
                         onMouseLeave={() => { togglePopUp(detail.id, 'out') }}
                         width="60px" src="assets/waremark.png"

@@ -13,8 +13,9 @@ const Card = ({pageId='home'}) => {
                 top: "150px",
                 left: "-20px",
                 // width: isCollapsed ? "10px" : "19rem",
-                height: "60vh",
+                height: "62vh",
                 // opacity: '1'
+                boxShadow:"1px 1px 7px 1px grey"
             }}
             id='caard'
             className={`card_container rounded-3xl`}
@@ -43,11 +44,13 @@ const Card = ({pageId='home'}) => {
             </div> */}
             
             <div href="#" style={{
-                backgroundColor: "rgb(79 113 197)",
+                // backgroundColor: "rgb(79 113 197)",
+                backgroundColor: "#667FC1",
                 width: "19rem",
-                height: "60vh",
+                height: "62vh",
+                
                 // display: isCollapsed ? 'none' : 'block'
-            }} className="block max-w-sm p-6 bg-white border-gray-200 rounded-3xl shadow hover:bg-gray-100 overflow-scroll scrolling">
+            }} className="block max-w-sm pl-6 pr-6 pt-2 bg-white border-gray-200 rounded-3xl shadow hover:bg-gray-100 overflow-scroll scrolling">
                 <div href="#" className="block text-center text-gray-900 rounded md:border-0 dark:text-white text-xl pl-2 cursor-default">Overview</div>
 
                 {

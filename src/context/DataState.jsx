@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import dataContext from './DataContext'
+import { useNavigate } from 'react-router-dom';
 
 const initWarehouseData = [
     {
@@ -17,6 +18,22 @@ const initWarehouseData = [
         materialInfo: {
             materials: ["Sulphur", "Zinc", "Coal"],
             volumes: [23, 43, 54]
+        },
+        previousData: {
+            material: [
+                {
+                    name: "Zinc",
+                    monthlyVol: []
+                },
+                {
+                    name: "Coal",
+                    monthlyVol: []
+                },
+                {
+                    name: "Sulphur",
+                    monthlyVol: []
+                },
+            ]
         }
     },
     {
@@ -34,6 +51,22 @@ const initWarehouseData = [
         materialInfo: {
             materials: ["Sulphur", "Zinc", "Coal"],
             volumes: [232, 41, 24]
+        },
+        previousData: {
+            material: [
+                {
+                    name: "Zinc",
+                    monthlyVol: []
+                },
+                {
+                    name: "Coal",
+                    monthlyVol: []
+                },
+                {
+                    name: "Sulphur",
+                    monthlyVol: []
+                },
+            ]
         }
     },
     {
@@ -51,6 +84,22 @@ const initWarehouseData = [
         materialInfo: {
             materials: ["Sulphur", "Zinc"],
             volumes: [232, 41]
+        },
+        previousData: {
+            material: [
+                {
+                    name: "Zinc",
+                    monthlyVol: []
+                },
+                {
+                    name: "Coal",
+                    monthlyVol: []
+                },
+                {
+                    name: "Sulphur",
+                    monthlyVol: []
+                },
+            ]
         }
     },
     {
@@ -68,25 +117,53 @@ const initWarehouseData = [
         materialInfo: {
             materials: ["Sulphur", "Zinc"],
             volumes: [232, 410]
+        },
+        previousData: {
+            material: [
+                {
+                    name: "Zinc",
+                    monthlyVol: []
+                },
+                {
+                    name: "Coal",
+                    monthlyVol: []
+                },
+                {
+                    name: "Sulphur",
+                    monthlyVol: []
+                },
+            ]
         }
     }
 ]
 
+
 const DataState = ({ children }) => {
     const [wareHouseDetails, setWarehouseDetails] = useState(initWarehouseData);
     const [isCollapsed, setIsCollapsed] = useState(false);
+    const navigate = useNavigate()
 
 
     const hideCard = () => {
         document.querySelector(".card_container").classList.toggle('closed')
         setIsCollapsed(!isCollapsed)
     }
+
+    const gotToPage = (detail)=>{
+        // navigate({
+        //     pathname:"/warehouse-details",
+        //     search:"?id="+detail.id
+        // })
+        navigate("/dashboard", {state:{id:detail.id}})
+    }
+
     const values = {
         wareHouseDetails,
         isCollapsed,
         setIsCollapsed,
         setWarehouseDetails,
-        hideCard
+        hideCard,
+        gotToPage
     }
 
     return (

@@ -39,7 +39,7 @@ const Navbar = () => {
           </div>
           <ul className="flex gap-10">
             <li ref={li1Ref} style={{ backgroundColor: "#6680c142", borderRadius: "5px", width: "43px", height: "43px" }} className='h-screen flex items-center justify-center nav_btn' onClick={() => selectFromNavbar(0)}>
-              <a href="" className="block py-2 pl-3 pr-4  rounded md:bg-transparent md:p-0 " aria-current="page">
+              <a href="/" className="block py-2 pl-3 pr-4  rounded md:bg-transparent md:p-0 " aria-current="page">
                 <img width='30px' style={{ pointerEvents: "none" }} src='assets/map2.png' /></a>
             </li>
             <li ref={li2Ref} onClick={() => selectFromNavbar(1)} style={{ backgroundColor: "", borderRadius: "5px", width: "43px", height: "43px" }} className='h-screen flex items-center justify-center nav_btn'>

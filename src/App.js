@@ -6,7 +6,7 @@ import {
   Route
 } from 'react-router-dom'
 import DataState from './context/DataState';
-import Warehouse from './pages/Warehouse';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <DataState>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/warehouse-details' element={<Warehouse />} />
+          <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
       </DataState>
     </BrowserRouter>
