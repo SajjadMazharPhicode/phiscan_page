@@ -20,7 +20,7 @@ const Home = () => {
             return detail
         })
         setWarehouseDetails(updateWareVacCap)
-    },[setWarehouseDetails])
+    },[])
     return (
         <>
             <Navbar isCollapsed={isCollapsed} hideCard={hideCard} />
