@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom'
 import { BarChart, DoughnutChat, LineChart } from '../../components/Charts'
 import MapBox from '../../components/MapBox'
 
+
 const Dashboard = () => {
     // const [searchParams] = useSearchParams()
     const { state } = useLocation()
@@ -61,7 +62,7 @@ const Dashboard = () => {
                         <div className='flex-row justify-center cursor-pointer text-xs p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md' style={{ height: "100%", width: "100%" }}>
                             <div style={{ width: "100%", height: "10%" }} className='flex justify-end'>
                                 <select name="chart_selector" onChange={(e)=> setLineTimeLabel(e.target.value)} className="chart_selectro outline-none rounded">
-                                    <option value="0" selected>Monthly</option>
+                                    <option value="0" defaultValue="0">Monthly</option>
                                     <option value="1" >Yearly</option>
                                     <option value="2" >Daily</option>
                                 </select>
@@ -79,7 +80,7 @@ const Dashboard = () => {
                         <div className='flex-row justify-center cursor-pointer text-xs p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md' style={{ height: "100%", width: "100%" }}>
                             <div style={{ width: "100%", height: "10%" }} onChange={(e)=> setBarTimeLabel(e.target.value)} className='flex justify-end'>
                                 <select name="chart_selector" className='chart_selectro outline-none rounded'>
-                                    <option value="0" selected>Monthly</option>
+                                    <option value="0" defaultValue="0">Monthly</option>
                                     <option value="1">Yearly</option>
                                     <option value="2">Daily</option>
                                 </select>

@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white border-grey-200 dark:bg-white-900  w-full navbar_container" id="navv">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="#" className="flex gap-20 items-center">
+        <div href="#" className="flex gap-20 items-center">
           <div style={{ backgroundColor: isCollapsed ? "" : "#6680c142", borderRadius: "5px", width: "40px", height: "40px" }} className='h-screen flex items-center justify-center'
             onClick={() => hideCard()}
           >
@@ -47,7 +47,7 @@ const Navbar = () => {
             <li ref={li3Ref} onClick={() => selectFromNavbar(2)} style={{ backgroundColor: "", borderRadius: "5px", width: "43px", height: "43px" }} className='h-screen flex items-center justify-center nav_btn'><img width='30px' src='assets/calculator2.png' style={{ pointerEvents: "none" }} />
             </li>
           </ul>
-        </a>
+        </div>
 
         <div className="flex md:order-2">
           <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1" >

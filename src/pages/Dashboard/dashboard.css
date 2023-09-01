@@ -12,3 +12,6 @@
     width: 30%;
     height: 40%;
 }
+.mapboxgl-ctrl-logo{
+    display: none !important;
+}

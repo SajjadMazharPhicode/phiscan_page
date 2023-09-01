@@ -34,7 +34,7 @@ const SubCard = ({ detail }) => {
                 <div className='pl-3'>
                     <h5 className=" text-l font-medium text-gray-900 light:text-white">{detail.warehouse}</h5>
                     <span className="text-sm text-gray-500 dark:text-gray-400">{detail.address}</span>
-                    <hr class="h-px mt-2 w-35 bg-gray-200 border-0 light:bg-gray-700"></hr>
+                    <hr className="h-px mt-2 w-35 bg-gray-200 border-0 light:bg-gray-700"></hr>
                 </div>
                 <div className='capacity_contaier' style={{transform:"rotate(-90deg)"}}>
                     <div className={`capacity_${getVolumeInPercent()[0]}`}></div>
@@ -56,17 +56,17 @@ const SubCard = ({ detail }) => {
                     {
                         detail.materialInfo.materials.map((material, i) => (
 
-                            <>
-                                <div key={i + detail.warehouse + material} className='className="text-sm text-gray-800 dark:text-gray-400"'>
+                            <div key={i + detail.warehouse + material}>
+                                <div  className='className="text-sm text-gray-800 dark:text-gray-400"'>
                                     {material}
                                 </div>
-                                <div key={i + detail.warehouse + material} className='className="text-sm text-gray-800 dark:text-gray-400"'>
+                                <div className='className="text-sm text-gray-800 dark:text-gray-400"'>
                                     {detail.materialInfo.volumes[i]}
                                 </div>
-                                <div key={i + detail.warehouse + material} className='className="text-sm text-gray-800 dark:text-gray-400"'>
+                                <div className='className="text-sm text-gray-800 dark:text-gray-400"'>
                                     {getOverallElementPercent(detail.materialInfo.volumes[i])}
                                 </div>
-                            </>
+                            </div>
 
                         )
                         )
