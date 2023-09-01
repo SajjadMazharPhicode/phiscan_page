@@ -30,21 +30,21 @@ const Navbar = () => {
           <div style={{ backgroundColor: isCollapsed ? "" : "#6680c142", borderRadius: "5px", width: "40px", height: "40px" }} className='h-screen flex items-center justify-center'
             onClick={() => hideCard()}
           >
-            <img src="/assets/hamburg.png" alt="" width="20px" />
+            <img src="/assets/hamburg.png" alt="hamburger" width="20px" />
           </div>
           <div className='flex gap-3 items-center'>
-            <img width="25px" src='/assets/phicode.png' />
+            <img width="25px" alt="logo" src='/assets/phicode.png' />
             <span className="self-center text-2xl font-semibold whitespace-nowrap light:text-white">PhiScan</span>
           </div>
           <ul className="flex gap-10">
             <li ref={li1Ref} style={{ backgroundColor: "#6680c142", borderRadius: "5px", width: "43px", height: "43px" }} className='h-screen flex items-center justify-center nav_btn' onClick={() => selectFromNavbar(0)}>
               <a href="/" className="block py-2 pl-3 pr-4  rounded md:bg-transparent md:p-0 " aria-current="page">
-                <img width='30px' style={{ pointerEvents: "none" }} src='assets/map2.png' /></a>
+                <img alt="mapicon" width='30px' style={{ pointerEvents: "none" }} src='assets/map2.png' /></a>
             </li>
             <li ref={li2Ref} onClick={() => selectFromNavbar(1)} style={{ backgroundColor: "", borderRadius: "5px", width: "43px", height: "43px" }} className='h-screen flex items-center justify-center nav_btn'>
-              <img width='30px' src='assets/schedule2.png' style={{ pointerEvents: "none" }} />
+              <img alt='schedule' width='30px' src='assets/schedule2.png' style={{ pointerEvents: "none" }} />
             </li>
-            <li ref={li3Ref} onClick={() => selectFromNavbar(2)} style={{ backgroundColor: "", borderRadius: "5px", width: "43px", height: "43px" }} className='h-screen flex items-center justify-center nav_btn'><img width='30px' src='assets/calculator2.png' style={{ pointerEvents: "none" }} />
+            <li ref={li3Ref} onClick={() => selectFromNavbar(2)} style={{ backgroundColor: "", borderRadius: "5px", width: "43px", height: "43px" }} className='h-screen flex items-center justify-center nav_btn'><img alt="navicon" width='30px' src='assets/calculator2.png' style={{ pointerEvents: "none" }} />
             </li>
           </ul>
         </div>
@@ -74,7 +74,7 @@ const Navbar = () => {
             </svg>
           </button> */}
           <div className='ml-10'>
-            <img src="/assets/user.png" width="30px" alt="" />
+            <img src="/assets/user.png" width="30px" alt="avatar" />
           </div>
         </div>
 

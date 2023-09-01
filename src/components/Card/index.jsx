@@ -4,7 +4,7 @@ import './card.css'
 import dataContext from '../../context/DataContext'
 
 const Card = ({pageId='home'}) => {
-    const {wareHouseDetails, isCollapsed} = useContext(dataContext)
+    const {wareHouseDetails} = useContext(dataContext)
     return (
         <div
             style={{

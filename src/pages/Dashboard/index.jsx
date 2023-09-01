@@ -40,7 +40,7 @@ const Dashboard = () => {
         })
         console.log("-------------------->", updatedWareDetails)
         setWarehouseDetails(updatedWareDetails)
-    }, [])
+    }, [wareHouseDetails])
 
     useEffect(() => {
         const id = state?.id || 0
