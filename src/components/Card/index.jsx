@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext} from 'react'
 import SubCard from './SubCard'
 import './card.css'
 import dataContext from '../../context/DataContext'

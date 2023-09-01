@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 import dataContext from '../../context/DataContext'
 import Card from '../../components/Card'

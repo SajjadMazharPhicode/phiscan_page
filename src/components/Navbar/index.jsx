@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useRef } from 'react'
 import './navbar.css'
 import dataContext from '../../context/DataContext'
 
