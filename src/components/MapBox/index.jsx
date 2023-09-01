@@ -55,6 +55,7 @@ const MapBox = ({ wareHouseDetails = null, setWarehouseDetails = null, sstyle, f
                     latitude={detail.location.lat}
                 >
                     <img
+                        alt='marker'
                         onClick={() => {gotToPage(detail)}}
                         onMouseEnter={() => { togglePopUp(detail.id, 'in') }}
                         onMouseLeave={() => { togglePopUp(detail.id, 'out') }}
