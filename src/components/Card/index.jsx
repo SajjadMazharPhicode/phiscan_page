@@ -46,7 +46,7 @@ const Card = ({pageId='home'}) => {
             <div href="#" style={{
                 // backgroundColor: "rgb(79 113 197)",
                 backgroundColor: "#667FC1",
-                width: "19rem",
+                width: "23vw",
                 height: "62vh",
                 
                 // display: isCollapsed ? 'none' : 'block'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Bar, Line } from 'react-chartjs-2';
+import { Bar, Doughnut, Line } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -10,6 +10,7 @@ import {
     Title,
     Tooltip,
     Legend,
+    ArcElement,
 } from 'chart.js';
 
 ChartJS.register(
@@ -18,6 +19,7 @@ ChartJS.register(
     PointElement,
     LineElement,
     BarElement,
+    ArcElement,
     Title,
     Tooltip,
     Legend
@@ -30,15 +32,32 @@ export const options = {
         },
         title: {
             display: true,
-            text: 'Chart.js Line Chart',
+            text: 'Chart.js Bar Chart - Stacked',
         },
     },
+    scales: {
+        x: {
+            stacked: false
+        },
+        y: {
+            stacked: true
+        }
+    }
 };
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep'];
 
-export const LineChart = ({data}) => {
+const getLabels = (type) => {
+    if (type === 0) {
+        return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep'];
+    } else if (type === 1) {
+        return ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015']
+    } else if (type === 2) {
+        return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    }
+}
+
+export const LineChart = ({ data, lineTimeLabel }) => {
     data = {
-        labels,
+        labels: getLabels(parseInt(lineTimeLabel)),
         datasets: [
             {
                 label: data[0].name,
@@ -62,14 +81,14 @@ export const LineChart = ({data}) => {
     };
 
     return (
-        <Line data={data} option={options} style={{height:"100%", width:"100%"}} />
+        <Line data={data} option={options} style={{ height: "100%", width: "100%" }} />
     )
 }
 
 
-export const BarChart = ({data}) => {
+export const BarChart = ({ data, barTimeLabel }) => {
     data = {
-        labels,
+        labels: getLabels(parseInt(barTimeLabel)),
         datasets: [
             {
                 label: data[0].name,
@@ -91,13 +110,36 @@ export const BarChart = ({data}) => {
             }
         ],
     };
-  return (
-    <Bar data={data} option={options} style={{height:"100%", width:"100%"}} />
-    
-  )
+    return (
+        <Bar data={data} option={options} style={{ height: "100%", width: "100%" }} />
+
+    )
 }
 
-
-
+export const DoughnutChat = ({ materialInfo, totalCapacity }) => {
+    const data = {
+        labels: [...materialInfo.materials, 'empty'],
+        datasets: [
+            {
+                label: 'volume',
+                data: [...materialInfo.volumes, totalCapacity-materialInfo.volumes.reduce((acc, curr)=>acc+curr,0)],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1,
+            },
+        ],
+    }
+    return <Doughnut data={data} />
+}
 
 
