@@ -24,7 +24,7 @@
 }
 
 .capacity_low {
-    background-color: rgb(28, 194, 28);
+    background-color: red;
     height: 25%;
     width: 100%;
     border-radius: 5px;
@@ -39,7 +39,7 @@
 
 }
 .capacity_gt_75 {
-    background-color: rgb(245, 44, 44);
+    background-color: rgb(47, 192, 47);;
     height: 90%;
     width: 100%;
     border-radius: 5px;
@@ -51,7 +51,7 @@
 }
 
 .capacity_full {
-    background-color: red;
+    background-color: rgb(28, 194, 28);;
     height: 100%;
     width: 100%;
     border-radius: 5px;

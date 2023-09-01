@@ -96,7 +96,7 @@ const Home = () => {
         <>
             <Navbar isCollapsed={isCollapsed} hideCard={hideCard} />
             {/* <MapView wareHouseDetails={wareHouseDetails} /> */}
-            <MapBox wareHouseDetails={wareHouseDetails} setWarehouseDetails={setWarehouseDetails} />
+            <MapBox sstyle={{ height: '100vh', width: '100vw' }} zoom={4.5} wareHouseDetails={wareHouseDetails} setWarehouseDetails={setWarehouseDetails} />
             <Card wareHouseDetails={wareHouseDetails} isCollapsed={isCollapsed} />
         </>
     )

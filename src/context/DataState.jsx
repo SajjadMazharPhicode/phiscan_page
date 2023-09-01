@@ -144,6 +144,7 @@ const DataState = ({ children }) => {
     const navigate = useNavigate()
 
 
+
     const hideCard = () => {
         document.querySelector(".card_container").classList.toggle('closed')
         setIsCollapsed(!isCollapsed)
@@ -163,7 +164,7 @@ const DataState = ({ children }) => {
         setIsCollapsed,
         setWarehouseDetails,
         hideCard,
-        gotToPage
+        gotToPage,
     }
 
     return (
