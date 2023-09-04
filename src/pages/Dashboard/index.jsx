@@ -6,6 +6,7 @@ import './dashboard.css'
 import { useLocation } from 'react-router-dom'
 import { BarChart, DoughnutChat, LineChart } from '../../components/Charts'
 import MapBox from '../../components/MapBox'
+import Carousel from '../../components/Carousel/Carousel'
 
 
 const Dashboard = () => {
@@ -49,12 +50,12 @@ const Dashboard = () => {
     }, [state])
 
     return (
-        <div style={{ height: "100vh", width: "100vw" }}>
+        <div style={{ maxHeight: "100%", width: "100%" }}>
             <div>
                 <Navbar isCollapsed={isCollapsed} hideCard={hideCard} />
                 <Card wareHouseDetails={wareHouseDetails} isCollapsed={isCollapsed} pageId={"warehouse"} />
             </div>
-            <div className='flex justify-end h-full'>
+            <div className='flex justify-end'>
 
                 <div style={{ height: "100%", width: isCollapsed ? '100%' : '75vw' }} className='dashboard_container grid grid-cols-2 gap-3 mr-10'>
                     <div style={{ height: "40%" }}>
@@ -70,8 +71,11 @@ const Dashboard = () => {
                                 <LineChart data={currentDetail.previousData.material} lineTimeLabel={lineTimeLabel} />
                             </div>
                         </div>
-                        <div className='flex justify-center cursor-pointer text-xs p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md' style={{ height: "100%", width: "100%" }}>
+                        {/* <div className='flex justify-center cursor-pointer text-xs p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md' style={{ height: "100%", width: "100%" }}>
                             <DoughnutChat materialInfo={currentDetail.materialInfo} totalCapacity={currentDetail.totalCapacity} />
+                        </div> */}
+                        <div className='flex justify-center p-1 cursor-pointer text-xs bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md' style={{ height: "100%", width: "100%",  }}>
+                            <Carousel sliderImages={currentDetail.images} />
                         </div>
                     </div>
                     <div style={{ height: "40%" }}>
@@ -85,7 +89,6 @@ const Dashboard = () => {
                                 </select>
                             </div>
                             <div style={{ width: "100%", height: "90%" }} className='flex justify-center'>
-
                                 <BarChart data={currentDetail.previousData.material} barTimeLabel={barTimeLabel} />
                             </div>
                         </div>

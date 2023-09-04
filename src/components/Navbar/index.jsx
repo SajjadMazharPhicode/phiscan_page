@@ -33,7 +33,9 @@ const Navbar = () => {
             <img src="/assets/hamburg.png" alt="hamburger" width="20px" />
           </div>
           <div className='flex gap-3 items-center'>
+            <div className='phi-logo'>
             <img width="25px" alt="logo" src='/assets/phicode.png' />
+            </div>
             <span className="self-center text-2xl font-semibold whitespace-nowrap light:text-white">PhiScan</span>
           </div>
           <ul className="flex gap-10">

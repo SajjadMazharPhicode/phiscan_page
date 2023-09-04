@@ -35,14 +35,14 @@ export const options = {
             text: 'Chart.js Bar Chart - Stacked',
         },
     },
-    scales: {
-        x: {
-            stacked: false
-        },
-        y: {
-            stacked: true
-        }
-    }
+    // scales: {
+    //     x: {
+    //         stacked: false
+    //     },
+    //     y: {
+    //         stacked: false
+    //     }
+    // }
 };
 
 const getLabels = (type) => {
@@ -81,7 +81,7 @@ export const LineChart = ({ data, lineTimeLabel }) => {
     };
 
     return (
-        <Line data={data} option={options} style={{ height: "100%", width: "100%" }} />
+        <Line data={data} options={options} style={{ height: "100%", width: "100%" }} />
     )
 }
 
@@ -111,12 +111,13 @@ export const BarChart = ({ data, barTimeLabel }) => {
         ],
     };
     return (
-        <Bar data={data} option={options} style={{ height: "100%", width: "100%" }} />
+        <Bar data={data} options={options} style={{ height: "100%", width: "100%" }} />
 
     )
 }
 
 export const DoughnutChat = ({ materialInfo, totalCapacity }) => {
+    options.plugins.legend.position = 'right'
     const data = {
         labels: [...materialInfo.materials],
         datasets: [
@@ -137,7 +138,7 @@ export const DoughnutChat = ({ materialInfo, totalCapacity }) => {
             },
         ],
     }
-    return <Doughnut data={data} />
+    return <Doughnut data={data} options={options} />
 }
 
 
