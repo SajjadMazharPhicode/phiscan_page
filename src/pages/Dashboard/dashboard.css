@@ -1,16 +1,5 @@
 .dashboard_container{
-    transition: 1s cubic-bezier(.77,-0.01,0,.77);
-}
-
-.ware_page_container{
-    height: 70vh;
-    justify-content: flex-end;
-    gap:10px;
-}
-
-.container1{
-    width: 30%;
-    height: 40%;
+    transition: 1s;
 }
 .mapboxgl-ctrl-logo{
     display: none !important;

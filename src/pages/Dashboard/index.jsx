@@ -50,53 +50,27 @@ const Dashboard = () => {
     }, [state])
 
     return (
-        <div style={{ maxHeight: "100%", width: "100%" }}>
+        <div style={{ height: "100%", width: "100%" }}>
             <div>
                 <Navbar isCollapsed={isCollapsed} hideCard={hideCard} />
                 <Card wareHouseDetails={wareHouseDetails} isCollapsed={isCollapsed} pageId={"warehouse"} />
             </div>
             <div className='flex justify-end'>
-
-                <div style={{ height: "100%", width: isCollapsed ? '100%' : '75vw' }} className='dashboard_container grid grid-cols-2 gap-3 mr-10'>
-                    <div style={{ height: "40%" }}>
-                        <div className='flex-row justify-center cursor-pointer text-xs p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md' style={{ height: "100%", width: "100%" }}>
-                            <div style={{ width: "100%", height: "10%" }} className='flex justify-end'>
-                                <select name="chart_selector" onChange={(e)=> setLineTimeLabel(e.target.value)} className="chart_selectro outline-none rounded">
-                                    <option value="0" defaultValue="0">Monthly</option>
-                                    <option value="1" >Yearly</option>
-                                    <option value="2" >Daily</option>
-                                </select>
-                            </div>
-                            <div style={{ width: "100%", height: "90%" }} className='flex justify-center'>
-                                <LineChart data={currentDetail.previousData.material} lineTimeLabel={lineTimeLabel} />
-                            </div>
-                        </div>
-                        {/* <div className='flex justify-center cursor-pointer text-xs p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md' style={{ height: "100%", width: "100%" }}>
-                            <DoughnutChat materialInfo={currentDetail.materialInfo} totalCapacity={currentDetail.totalCapacity} />
-                        </div> */}
-                        <div className='flex justify-center p-1 cursor-pointer text-xs bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md' style={{ height: "100%", width: "100%",  }}>
-                            <Carousel sliderImages={currentDetail.images} />
-                        </div>
+                <div style={{ height: "100%", width: isCollapsed ? '100%' : '75vw' }} className='dashboard_container grid grid-cols-4 gap-3 mr-10 '>
+                    <div className='flex justify-center cursor-pointer text-xs p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 mt-4 ml-4 shadow-md col-span-3' style={{ height: isCollapsed ? '96%' : '96%', }}>
+                        <LineChart data={currentDetail.previousData.material} lineTimeLabel={lineTimeLabel} />
+                        <DoughnutChat materialInfo={currentDetail.materialInfo} totalCapacity={currentDetail.totalCapacity} />
                     </div>
-                    <div style={{ height: "40%" }}>
+                    <div key={currentDetail.id} className='flex-row justify-center cursor-pointer text-xs p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md' style={{ height: '95%' }}>
+                        <MapBox sstyle={{ height: "100%", width: "100% !important" }} zoom={5.5} from={'dashboard'} wareHouseDetails={[currentDetail]} />
 
-                        <div className='flex-row justify-center cursor-pointer text-xs p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md' style={{ height: "100%", width: "100%" }}>
-                            <div style={{ width: "100%", height: "10%" }} onChange={(e)=> setBarTimeLabel(e.target.value)} className='flex justify-end'>
-                                <select name="chart_selector" className='chart_selectro outline-none rounded'>
-                                    <option value="0" defaultValue="0">Monthly</option>
-                                    <option value="1">Yearly</option>
-                                    <option value="2">Daily</option>
-                                </select>
-                            </div>
-                            <div style={{ width: "100%", height: "90%" }} className='flex justify-center'>
-                                <BarChart data={currentDetail.previousData.material} barTimeLabel={barTimeLabel} />
-                            </div>
-                        </div>
-                        <div key={currentDetail.id} className='flex flex-1 cursor-pointer text-xs bg-white border flex-col border-gray-200 rounded-lg shadow m-4 hover:bg-gray-100 shadow-md' style={{ height: "100%", width: "100%", overflowX:'hidden' }}>
-                            <div style={{width:"58rem", height:"100%"}}>
-                                <MapBox sstyle={{height:"100%", width:"100% !important"}} zoom={5.5} from={'dashboard'} wareHouseDetails={[currentDetail]} />
-                            </div>
-                        </div>
+                    </div>
+
+                    <div className='flex justify-center cursor-pointer text-xs p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md col-span-2' style={{ height: isCollapsed ? '64%' : '75%' }}>
+                        <Carousel sliderImages={currentDetail.images} />
+                    </div>
+                    <div className='flex justify-center cursor-pointer text-xs p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ml-4 mt-4 shadow-md col-span-2 items-center' style={{ height: isCollapsed ? '64%' : '75%' }}>
+                        <BarChart data={currentDetail.previousData.material} barTimeLabel={barTimeLabel} />
                     </div>
                 </div>
             </div>

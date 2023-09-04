@@ -7,6 +7,10 @@ const MapBox = ({ wareHouseDetails = null, setWarehouseDetails = null, sstyle, f
 
     const { gotToPage } = React.useContext(dataContext)
 
+    const onLoad = (map) => {
+        map.resize()
+    }
+
     const togglePopUp = (id, action) => {
         if(from==='dashboard') return;
         let hoverUpdate
@@ -42,6 +46,7 @@ const MapBox = ({ wareHouseDetails = null, setWarehouseDetails = null, sstyle, f
             height: '100vh',
             width: '100vw'
         }}
+        // onResize={onLoad}
         attributionControl={false}
         
         style={sstyle}

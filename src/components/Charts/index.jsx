@@ -32,7 +32,7 @@ export const options = {
         },
         title: {
             display: true,
-            text: 'Chart.js Bar Chart - Stacked',
+            // text: 'Chart.js Bar Chart - Stacked',
         },
     },
     // scales: {
@@ -117,7 +117,7 @@ export const BarChart = ({ data, barTimeLabel }) => {
 }
 
 export const DoughnutChat = ({ materialInfo, totalCapacity }) => {
-    options.plugins.legend.position = 'right'
+    // options.plugins.legend.position = 'right'
     const data = {
         labels: [...materialInfo.materials],
         datasets: [
