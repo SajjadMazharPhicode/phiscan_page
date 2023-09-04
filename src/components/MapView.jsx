@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 // import { Map } from '@googlemaps/react-wrapper'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import iconn from '../Markers/warehouse.png'

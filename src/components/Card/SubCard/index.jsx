@@ -1,6 +1,5 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import './subCard.css'
-import {useNavigate} from 'react-router-dom'
 import dataContext from '../../../context/DataContext'
 
 
