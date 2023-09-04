@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/phiscan_page/static/css/main.c117d472.css",
-    "main.js": "/phiscan_page/static/js/main.24776022.js",
-    "static/js/483.5530bc29.chunk.js": "/phiscan_page/static/js/483.5530bc29.chunk.js",
-    "static/media/warehouse.png": "/phiscan_page/static/media/warehouse.819a04abe01f997f4d8e.png",
-    "index.html": "/phiscan_page/index.html",
-    "main.c117d472.css.map": "/phiscan_page/static/css/main.c117d472.css.map",
-    "main.24776022.js.map": "/phiscan_page/static/js/main.24776022.js.map",
-    "483.5530bc29.chunk.js.map": "/phiscan_page/static/js/483.5530bc29.chunk.js.map"
+    "main.css": "/static/css/main.e295f06f.css",
+    "main.js": "/static/js/main.5ca3a6a3.js",
+    "static/js/483.1d5a2151.chunk.js": "/static/js/483.1d5a2151.chunk.js",
+    "index.html": "/index.html",
+    "main.e295f06f.css.map": "/static/css/main.e295f06f.css.map",
+    "main.5ca3a6a3.js.map": "/static/js/main.5ca3a6a3.js.map",
+    "483.1d5a2151.chunk.js.map": "/static/js/483.1d5a2151.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c117d472.css",
-    "static/js/main.24776022.js"
+    "static/css/main.e295f06f.css",
+    "static/js/main.5ca3a6a3.js"
   ]
 }
